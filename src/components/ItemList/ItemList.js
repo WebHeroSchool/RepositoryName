@@ -1,11 +1,9 @@
 import React from 'react';
 import Item from '../Item/Item'
 
-const ItemList = () => (
+const ItemList = ({items}) => (
   <ul>
-    <li><Item /></li>
-    <li><Item /></li>
-    <li><Item /></li>
+    {items.map(item =><li key={item.value}><Item value={item.value}/></li>)}
   </ul>
 );
 
