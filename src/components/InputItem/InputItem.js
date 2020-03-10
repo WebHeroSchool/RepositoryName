@@ -1,8 +1,9 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import styles from './InputItem.module.css';
 
-const InputItem = () => (
-  <div >
+const InputItem = () => (<div className={styles.flex}>
+  <div className={styles.size}>
     <TextField
       id="standard-textarea"
       label="Введи дело:"
@@ -10,9 +11,8 @@ const InputItem = () => (
       fullWidth
       margin="normal"
     />   
-  
+  </div>
   <button>Добавить</button>
-  </div>);
-
+</div>);
 
 export default InputItem;

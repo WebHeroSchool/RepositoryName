@@ -1,13 +1,15 @@
 import React from 'react';
 import Item from '../Item/Item'
+import styles from './ItemList.module.css'
 
-const ItemList = ({items}) => (
-  <ul>
+const ItemList = ({items}) => (<div>
+  <ul className={styles.marker}>
     {items.map(item =>
-      <li key={item.value}>
+      <li className={styles.mark} key={item.value}>
         <Item value={item.value} isDone={item.isDone}/>
       </li>)}
   </ul>
+  </div>
 );
 
 export default ItemList;
