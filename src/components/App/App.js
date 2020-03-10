@@ -6,27 +6,30 @@ import styles from './App.module.css'
 // import { render } from '@testing-library/react';
 
 class App extends React.Component {
+  state = {
+    items: [
+      {
+        value: 'Закончить модуль',
+        isDone: true
+      },
+      {
+        value: 'Закончить модуль за модулем',
+        isDone: false
+      },
+      {
+        value: 'Работать',
+        isDone: true
+      }
+    ]
+  }
   render() {
-      const items = [
-        {
-          value: 'Закончить модуль',
-          isDone: true
-        },
-        {
-          value: 'Закончить модуль за модулем',
-          isDone: false
-        },
-        {
-          value: 'Работать',
-          isDone: true
-        }
-      ];
+      
       
       return (
       <div className={styles.wrap}>
         <h1>Важные дела:</h1>
         <InputItem />
-        <ItemList items={items}/>
+        <ItemList items={this.state.items}/>
         <Footer count = {3}/>
       </div>);
     }
