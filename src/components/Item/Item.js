@@ -5,12 +5,14 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import styles from './Item.module.css'
 
-const Item = ({value, isDone}) => (<div className={styles.wrap}>
+const Item = ({value, isDone, onClickDone}) => (<div className={styles.wrap}>
   <div>
   <Checkbox
     value="primary"
     inputProps={{ 'aria-label': 'primary checkbox' }}
-  />
+    checked={isDone}
+    onClick={()=>onClickDone(isDone)}
+ />
   <span className={
     classnames({
       [styles.item]: true,
