@@ -1,5 +1,5 @@
 import React from 'react';
-// import InputItem from '../InputItem/InoutItem'
+import InputItem from '../InputItem/InputItem'
 import ItemList from '../ItemList/ItemList'
 import Footer from '../Footer/Footer'
 import styles from './App.module.css'
@@ -23,7 +23,7 @@ const App = () => {
   return (
   <div className={styles.wrap}>
     <h1>Важные дела:</h1>
-    {/* <InputItem /> */}
+    <InputItem />
     <ItemList items={items}/>
     <Footer count = {3}/>
   </div>);
