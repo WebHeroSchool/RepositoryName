@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
-const Footer = ({ count }) => 
-<div className={styles.wrap}>
-  <span>Всего заданий: { count }</span> 
+const Footer = ({ count, onClickFooter }) => 
+<div className={styles.wrap} onClick={onClickFooter}>
+  <span>Всего заданий: { count } </span>
     <div>
       <button className={styles.button}>Все</button>
       <button className={styles.button}>Активные</button>
