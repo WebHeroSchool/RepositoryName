@@ -5,7 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import styles from './Item.module.css'
 
-const Item = ({value, isDone, onClickDone, id}) => (<div className={styles.wrap}>
+const Item = ({value, isDone, onClickDone, id, onClickDelite}) => (<div className={styles.wrap}>
   <div onClick={() => onClickDone(id)}>
   <Checkbox
     value="primary"
@@ -22,7 +22,7 @@ const Item = ({value, isDone, onClickDone, id}) => (<div className={styles.wrap}
   {value}
   </span>
   </div>
-    <IconButton aria-label="delete" >
+    <IconButton aria-label="delete" onClick={() => onClickDelite(id)} >
       <DeleteIcon />
     </IconButton>
 </div>)
