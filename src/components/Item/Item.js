@@ -5,8 +5,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import styles from './Item.module.css'
 
-const Item = ({value, isDone, onClickDone}) => (<div className={styles.wrap}>
-  <div>
+const Item = ({value, isDone, onClickDone, id}) => (<div className={styles.wrap}>
+  <div onClick={() => onClickDone(id)}>
   <Checkbox
     value="primary"
     inputProps={{ 'aria-label': 'primary checkbox' }}

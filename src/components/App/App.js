@@ -10,21 +10,35 @@ class App extends React.Component {
     items: [
       {
         value: 'Закончить модуль',
-        isDone: true
+        isDone: true,
+        id:1
       },
       {
         value: 'Закончить модуль за модулем',
-        isDone: false
+        isDone: false,
+        id:2
       },
       {
         value: 'Работать',
-        isDone: true
+        isDone: true,
+        id:3
       }
     ]
   };
 
-  onClickDone = isDone => console.log(isDone);
+  onClickDone = id => {
+    const newItemList = this.state.items.map(item=> {
+      const newItem = { ...item};
 
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+
+      return newItem;
+    });
+
+    this.setState({ items: newItemList });
+  };
   render() {
       
       
@@ -33,7 +47,7 @@ class App extends React.Component {
         <h1>Важные дела:</h1>
         <InputItem />
         <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
-        <Footer count = {3}/>
+        <Footer count={this.state.items.length}/>
       </div>);
     }
   };
